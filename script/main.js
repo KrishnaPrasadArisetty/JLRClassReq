@@ -17,6 +17,21 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			widgetDataSelected: {},
 	
 			onLoad: function() { 
+
+                BaseUrl.getServiceUrl ( {                     
+                    platformId : widget.getValue('PlatFormInstanceId'),
+                    serviceName: widget.getValue('3DSearch'),	  
+                    onComplete : function ( data ) {
+                         //CAAi3DXCompassMngt.setServiceUrl(data);
+                         //comWidget.DataReady() ;
+                         console.log("data-1111---service urk--URL",data);
+                    },
+                    onFailure:  function() { 
+                         console.warn('Failure'); 
+                    }	
+                }); 
+
+
 				// Create table elements
 				Spectable = widget.createElement('table', { 'id' : 'spectable' });
 				parttable = widget.createElement('table', { 'id' : 'parttable' });
