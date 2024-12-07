@@ -16,6 +16,9 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 
 
 				mainDiv.appendChild(form);
+				widget.body.innerHTML="";
+				widget.body.appendChild(mainDiv);
+
 
 				var ssubDiv = widget.createElement('div', { 'id' : 'ssubDiv'});
 				ssubDiv.style = "display: flex; justify-content: flex-end";
