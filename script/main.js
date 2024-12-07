@@ -17,10 +17,10 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			widgetDataSelected: {},
 	
 			onLoad: function() { 
-
+                console.log("data-1111---servicemsmmmmmm urk--URL");
                 BaseUrl.getServiceUrl ( {                     
-                    platformId : widget.getValue('PlatFormInstanceId'),
-                    serviceName: widget.getValue('3DSearch'),	  
+                    platformId : widget.getValue('x3dPlatformId'),
+                    serviceName: widget.getValue('3DSpace'),	  
                     onComplete : function ( data ) {
                          //CAAi3DXCompassMngt.setServiceUrl(data);
                          //comWidget.DataReady() ;
