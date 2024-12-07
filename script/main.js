@@ -2,8 +2,8 @@
 require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS/WAFData/WAFData", "DS/i3DXCompassServices/i3DXCompassServices"], 
 	function(DataDragAndDrop, PlatformAPI, WAFData, BaseUrl) {
 		
-		securityContext= "ctx%3A%3AVPLMProjectLeader.BU-0000001.Rosemount%20Flow",
-
+		securityContext= "ctx%3A%3AVPLMProjectLeader.BU-0000001.Rosemount%20Flow";
+		
 		var comWidget = {
 			widgetDataSelected: {},
 	
@@ -47,7 +47,6 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 					serviceName: '3DSpace', 
 					onComplete :  function (URLResult) {
 						urlBASE = URLResult+"/";
-						//urlBASE = "https://oi000186152-us1-space.3dexperience.3ds.com/enovia/";
 						console.log("aaaaaaaaaaaaaaaaa-1111-----URL",urlBASE);
 						comWidget.setCSRF();
 					},
@@ -83,7 +82,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			},
 			getPartDetails: function(PartId) {
 				
-			},
+			}
 		};
 		widget.addEvent('onLoad', comWidget.onLoad);
 		widget.addEvent('onRefresh', comWidget.onLoad);
