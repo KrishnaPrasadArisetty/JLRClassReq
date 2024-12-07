@@ -11,8 +11,14 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
                 console.log("Entering On Load Function");
                 var mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
 				var form = widget.createElement('form', { 'id' : 'myForm' });
+				
+				// Create form fields
+				var ActionLable = document.createElement('label',{'for':'actionType'});
+				ActionLable.textContent = 'First name: ';
+				form.appendChild(ActionLable);
+				
 				var selectDropdown = widget.createElement('select', {'id': 'actionType', 'name': 'actionType'});
-				var options = ['Create New Product', 'ReName Product'];
+				var options = ['Create New Product', 'Modify Product','Delete Product'];
 				for (var i = 0; i < options.length; i++) {
 				  var option = widget.createElement('option');
 				  option.text = options[i];
