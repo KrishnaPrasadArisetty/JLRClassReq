@@ -35,7 +35,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 					var selectedValue = selectDropdown.value;
 					// Perform action based on selected value
 					alert("selectedValue------------"+selectedValue);
-					addDomains();
+					comWidget.addDomains();
 				});
 				form.appendChild(selectDropdown);
 
@@ -78,7 +78,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 									var selectedValue = Domains.value;
 									// Perform action based on selected value
 									alert("selectedValue------------"+selectedValue);
-									addDomains();
+									comWidget.addDomains();
 								});
 								form.appendChild(Domains);
 			},
