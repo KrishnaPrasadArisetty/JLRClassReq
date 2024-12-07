@@ -3,13 +3,27 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 	function(DataDragAndDrop, PlatformAPI, WAFData, BaseUrl) {
 		
 		securityContext= "ctx%3A%3AVPLMProjectLeader.BU-0000001.Rosemount%20Flow";
-		
+
 		var comWidget = {
 			widgetDataSelected: {},
 	
 			onLoad: function() { 
                 console.log("Entering On Load Function");
-                
+                var mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
+				var form = widget.createElement('form', { 'id' : 'myForm' });
+				var ActionLable = widget.createElement('label', { 'for' : 'Action Type' }, 'Action Type:');
+				form.appendChild(ActionLable);
+
+
+				mainDiv.appendChild(form);
+
+				var ssubDiv = widget.createElement('div', { 'id' : 'ssubDiv'});
+				ssubDiv.style = "display: flex; justify-content: flex-end";
+				var savebutton = document.createElement('button', {'class':'dynamic-button'});
+				savebutton.style = "border-radius: 4px; padding: 5px 20px; font-size: 12px; text-align: center; margin: 10px; background-color: #368ec4; color: white; border: none; cursor: pointer";
+				savebutton.innerHTML = 'save';
+				ssubDiv.appendChild(savebutton);
+
 			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
 				var headerWAF = {
