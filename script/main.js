@@ -3,27 +3,40 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 	function(DataDragAndDrop, PlatformAPI, WAFData, BaseUrl) {
 		
 		securityContext= "ctx%3A%3AVPLMProjectLeader.BU-0000001.Rosemount%20Flow";
-
+		var form = "";
 		var comWidget = {
 			widgetDataSelected: {},
 	
 			onLoad: function() { 
                 console.log("Entering On Load Function");
                 var mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
-				var form = widget.createElement('form', { 'id' : 'myForm' });
+				form = widget.createElement('form', { 'id' : 'myForm' });
 				
 				// Create form fields
 				var ActionLable = document.createElement('label',{'for':'actionType'});
-				ActionLable.textContent = 'First name: ';
+				ActionLable.textContent = 'Select Action: ';
 				form.appendChild(ActionLable);
 				
 				var selectDropdown = widget.createElement('select', {'id': 'actionType', 'name': 'actionType'});
+				// Create empty option
+				var emptyOption = widget.createElement('option');
+				emptyOption.value = '';
+				emptyOption.selected = true;
+				selectDropdown.appendChild(emptyOption);
+
 				var options = ['Create New Product', 'Modify Product','Delete Product'];
 				for (var i = 0; i < options.length; i++) {
 				  var option = widget.createElement('option');
 				  option.text = options[i];
 				  selectDropdown.appendChild(option);
 				}
+				// Add event listener to action type 
+				selectDropdown.addEventListener('change', ()=> {
+					var selectedValue = selectDropdown.value;
+					// Perform action based on selected value
+					alert("selectedValue------------"+selectedValue);
+					addDomains();
+				});
 				form.appendChild(selectDropdown);
 
 
@@ -40,6 +53,34 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				widget.body.innerHTML="";
 				widget.body.appendChild(mainDiv);
 
+			},
+			addDomains: function() { 
+								// Create form fields
+								let DomainLable = document.createElement('label',{'for':'Domains'});
+								DomainLable.textContent = 'select domain: ';
+								form.appendChild(DomainLable);
+								
+								let Domains = widget.createElement('select', {'id': 'Domains', 'name': 'Domains'});
+								// Create empty option
+								let emptyOption = widget.createElement('option');
+								emptyOption.value = '';
+								emptyOption.selected = true;
+								Domains.appendChild(emptyOption);
+				
+								var options = ['01', '02','03'];
+								for (var i = 0; i < options.length; i++) {
+								  var option = widget.createElement('option');
+								  option.text = options[i];
+								  Domains.appendChild(option);
+								}
+								// Add event listener to action type 
+								Domains.addEventListener('change', ()=> {
+									var selectedValue = Domains.value;
+									// Perform action based on selected value
+									alert("selectedValue------------"+selectedValue);
+									addDomains();
+								});
+								form.appendChild(Domains);
 			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
 				var headerWAF = {
