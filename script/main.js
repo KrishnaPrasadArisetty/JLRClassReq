@@ -15,17 +15,18 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				form.appendChild(ActionLable);
 
 
-				mainDiv.appendChild(form);
-				widget.body.innerHTML="";
-				widget.body.appendChild(mainDiv);
-
-
 				var ssubDiv = widget.createElement('div', { 'id' : 'ssubDiv'});
 				ssubDiv.style = "display: flex; justify-content: flex-end";
 				var savebutton = document.createElement('button', {'class':'dynamic-button'});
 				savebutton.style = "border-radius: 4px; padding: 5px 20px; font-size: 12px; text-align: center; margin: 10px; background-color: #368ec4; color: white; border: none; cursor: pointer";
 				savebutton.innerHTML = 'save';
 				ssubDiv.appendChild(savebutton);
+
+
+				mainDiv.appendChild(form);
+				mainDiv.appendChild(ssubDiv);
+				widget.body.innerHTML="";
+				widget.body.appendChild(mainDiv);
 
 			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
