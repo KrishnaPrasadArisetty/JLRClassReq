@@ -93,7 +93,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			addActions: function() { 
 				let childdiv = widget.createElement('div', { 'id' : 'childdiv' });
 				let childform = widget.createElement('form', { 'id' : 'childform' });
-				var DescLable = document.createElement('label',{'for':'Description'});
+				let DescLable = document.createElement('label',{'for':'Description'});
 				DescLable.textContent = 'Description: ';
 				childform.appendChild(DescLable);
 				let Description = widget.createElement('input', {'id': 'Description', 'name': 'Description'});
