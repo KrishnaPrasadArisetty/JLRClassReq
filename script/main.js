@@ -8,7 +8,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			widgetDataSelected: {},
 	
 			onLoad: function() { 
-                console.log("Entering On Load Function");
+                console.log("Entering On Load Function--->");
                 var mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
 				form = widget.createElement('form', { 'id' : 'myForm' });
 				
@@ -16,7 +16,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				var LevelLable = document.createElement('label',{'for':'LevelDropdown'});
 				LevelLable.textContent = 'Select Level: ';
 				form.appendChild(LevelLable);
-				
+				console.log("Entering On Load Function--->222222");
 				var LevelDropdown = widget.createElement('select', {'id': 'LevelDropdown', 'name': 'LevelDropdown'});
 
 				let options = ['Create New Product', 'Modify Product','Delete Product'];
