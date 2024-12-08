@@ -55,7 +55,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 
 				console.log("Entering On Load Function--->5555");
 				var ActionDropdown = ['Add New', 'Modify', 'Delete'];
-				for (var i = 0; i < DomainOptions.length; i++) {
+				for (var i = 0; i < ActionDropdown.length; i++) {
 				  var option = widget.createElement('option');
 				  option.text = options[i];
 				  ActionDropdown.appendChild(option);
