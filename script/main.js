@@ -12,32 +12,62 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
                 var mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
 				form = widget.createElement('form', { 'id' : 'myForm' });
 				
-				// Create form fields
-				var ActionLable = document.createElement('label',{'for':'actionType'});
+				// Create form Level fields
+				var LevelLable = document.createElement('label',{'for':'LevelDropdown'});
+				LevelLable.textContent = 'Select Level: ';
+				form.appendChild(LevelLable);
+				
+				var LevelDropdown = widget.createElement('select', {'id': 'LevelDropdown', 'name': 'LevelDropdown'});
+
+				let options = ['Create New Product', 'Modify Product','Delete Product'];
+				for (var i = 0; i < options.length; i++) {
+				  var option = widget.createElement('option');
+				  option.text = options[i];
+				  LevelDropdown.appendChild(option);
+				}
+
+				var DomainlLable = document.createElement('label',{'for':'DomainDropdown'});
+				DomainlLable.textContent = 'Select Domain: ';
+				form.appendChild(DomainlLable);
+
+				var DomainDropdown = widget.createElement('select', {'id': 'DomainDropdown', 'name': 'DomainDropdown'});
+				var DomainOptions = ['01', '02','03','04','06'];
+				for (var i = 0; i < DomainOptions.length; i++) {
+				  var option = widget.createElement('option');
+				  option.text = options[i];
+				  DomainDropdown.appendChild(option);
+				}
+				form.appendChild(DomainDropdown);
+
+				
+				var ActionLable = document.createElement('label',{'for':'ActionDropdown'});
 				ActionLable.textContent = 'Select Action: ';
 				form.appendChild(ActionLable);
-				
-				var selectDropdown = widget.createElement('select', {'id': 'actionType', 'name': 'actionType'});
+
+				var ActionDropdown = widget.createElement('select', {'id': 'ActionDropdown', 'name': 'ActionDropdown'});
+
 				// Create empty option
 				var emptyOption = widget.createElement('option');
 				emptyOption.value = '';
 				emptyOption.selected = true;
-				selectDropdown.appendChild(emptyOption);
+				ActionDropdown.appendChild(emptyOption);
 
-				var options = ['Create New Product', 'Modify Product','Delete Product'];
-				for (var i = 0; i < options.length; i++) {
+				var ActionDropdown = ['Add New', 'Modify', 'Delete'];
+				for (var i = 0; i < DomainOptions.length; i++) {
 				  var option = widget.createElement('option');
 				  option.text = options[i];
-				  selectDropdown.appendChild(option);
+				  ActionDropdown.appendChild(option);
 				}
+				form.appendChild(ActionDropdown);
+
+
 				// Add event listener to action type 
-				selectDropdown.addEventListener('change', ()=> {
-					var selectedValue = selectDropdown.value;
-					// Perform action based on selected value
-					alert("selectedValue------------"+selectedValue);
-					comWidget.addDomains();
+				ActionDropdown.addEventListener('change', ()=> {
+					var selectedValue = LevelDropdown.value;
+					alert("selectedValue----->"+selectedValue);
+					comWidget.addActions();
 				});
-				form.appendChild(selectDropdown);
+				form.appendChild(ActionDropdown);
 
 
 				var ssubDiv = widget.createElement('div', { 'id' : 'ssubDiv'});
@@ -54,33 +84,8 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				widget.body.appendChild(mainDiv);
 
 			},
-			addDomains: function() { 
-								// Create form fields
-								let DomainLable = document.createElement('label',{'for':'Domains'});
-								DomainLable.textContent = 'select domain: ';
-								form.appendChild(DomainLable);
-								
-								let Domains = widget.createElement('select', {'id': 'Domains', 'name': 'Domains'});
-								// Create empty option
-								let emptyOption = widget.createElement('option');
-								emptyOption.value = '';
-								emptyOption.selected = true;
-								Domains.appendChild(emptyOption);
+			addActions: function() { 
 				
-								var options = ['01', '02','03'];
-								for (var i = 0; i < options.length; i++) {
-								  var option = widget.createElement('option');
-								  option.text = options[i];
-								  Domains.appendChild(option);
-								}
-								// Add event listener to action type 
-								Domains.addEventListener('change', ()=> {
-									var selectedValue = Domains.value;
-									// Perform action based on selected value
-									alert("selectedValue------------"+selectedValue);
-									comWidget.addDomains();
-								});
-								form.appendChild(Domains);
 			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
 				var headerWAF = {
