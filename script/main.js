@@ -3,13 +3,13 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 	function(DataDragAndDrop, PlatformAPI, WAFData, BaseUrl) {
 		
 		securityContext= "ctx%3A%3AVPLMProjectLeader.BU-0000001.Rosemount%20Flow";
-		var form = "";
+		var form,mainDiv = "";
 		var comWidget = {
 			widgetDataSelected: {},
 	
 			onLoad: function() { 
                 console.log("Entering On Load Function--->");
-                var mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
+                mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
 				form = widget.createElement('form', { 'id' : 'myForm' });
 				
 				// Create form Level fields
@@ -69,27 +69,41 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				ActionDropdown.addEventListener('change', ()=> {
 					var selectedValue = ActionDropdown.value;
 					alert("selectedValue----->"+selectedValue);
-					//comWidget.addActions();
+					comWidget.addActions();
 				});
 				form.appendChild(ActionDropdown);
 
-
+				/*
 				var ssubDiv = widget.createElement('div', { 'id' : 'ssubDiv'});
 				ssubDiv.style = "display: flex; justify-content: flex-end";
 				var savebutton = document.createElement('button', {'class':'dynamic-button'});
 				savebutton.style = "border-radius: 4px; padding: 5px 20px; font-size: 12px; text-align: center; margin: 10px; background-color: #368ec4; color: white; border: none; cursor: pointer";
 				savebutton.innerHTML = 'save';
 				ssubDiv.appendChild(savebutton);
-
+				*/
 
 				mainDiv.appendChild(form);
-				mainDiv.appendChild(ssubDiv);
+				//mainDiv.appendChild(ssubDiv);
 				widget.body.innerHTML="";
 				widget.body.appendChild(mainDiv);
 
 			},
 			addActions: function() { 
+				let childdiv = widget.createElement('div', { 'id' : 'childdiv' });
+				let childform = widget.createElement('form', { 'id' : 'childform' });
+				var DescLable = document.createElement('label',{'for':'Description'});
+				DescLable.textContent = 'Description: ';
+				childform.appendChild(DescLable);
+				let Description = widget.createElement('input', {'id': 'Description', 'name': 'Description'});
+				childform.appendChild(Description);
 				
+
+				childdiv.appendChild(childform);
+				var savebutton = document.createElement('button', {'class':'dynamic-button'});
+				savebutton.style = "border-radius: 4px; padding: 5px 20px; font-size: 12px; text-align: center; margin: 10px; background-color: #368ec4; color: white; border: none; cursor: pointer";
+				savebutton.innerHTML = 'save';
+				childdiv.appendChild(savebutton);
+				mainDiv.appendChild(childdiv);
 			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
 				var headerWAF = {
