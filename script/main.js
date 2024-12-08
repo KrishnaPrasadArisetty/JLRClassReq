@@ -7,7 +7,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 
 
 		var comWidget = {
-	
+			
 			onLoad: function() { 
 
                 console.log("Entering On Load Function--->");
