@@ -1,15 +1,17 @@
 
 require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS/WAFData/WAFData", "DS/i3DXCompassServices/i3DXCompassServices"], 
 	function(DataDragAndDrop, PlatformAPI, WAFData, BaseUrl) {
+
+
 		
-		//securityContext= "ctx%3A%3AVPLMProjectLeader.BU-0000001.Rosemount%20Flow";
-		var form,mainDiv;
+
+
 		var comWidget = {
-			widgetDataSelected: {},
 	
 			onLoad: function() { 
 
                 console.log("Entering On Load Function--->");
+				var form,mainDiv;
                 mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
 				form = widget.createElement('form', { 'id' : 'myForm' });
 				
