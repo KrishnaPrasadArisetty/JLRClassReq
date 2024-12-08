@@ -11,7 +11,8 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			onLoad: function() { 
 
                 console.log("Entering On Load Function--->");
-				var form,mainDiv;
+				var form,mainDiv,urlBASE,csrfToken,securityContext;
+				securityContext= "VPLMProjectLeader.Cross-Commodity.Requirements";
                 mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
 				form = widget.createElement('form', { 'id' : 'myForm' });
 				
