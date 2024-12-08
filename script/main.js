@@ -111,6 +111,8 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				mainDiv.appendChild(childdiv);
 			},
 			validateCreateTask : function(){
+				alert("urlBASE-->"+urlBASE);
+				alert("securityContext-->"+securityContext);
 				let urlObjWAF = urlBASE;
 				urlObjWAF += "/resources/v1/modeler/tasks";
 				console.log("kp--urlObjWAF--- >> ",+urlObjWAF);
