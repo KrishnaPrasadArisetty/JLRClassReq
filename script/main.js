@@ -5,8 +5,6 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 
 		console.log("Entering On Load Function--qqqqqqqqqq->");
 
-		
-		
 		var comWidget = {
 			
 			onLoad: function() { 
@@ -115,6 +113,8 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			validateCreateTask : function(){
 				let urlObjWAF = urlBASE;
 				urlObjWAF += "/resources/v1/modeler/tasks";
+				console.log("kp--urlObjWAF--- >> ",+urlObjWAF);
+				console.log("kp--securityContext--- >> ",+securityContext);
 				const data = {
 							"data": [
 									{
@@ -143,7 +143,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 					async : false,
 					onComplete: function(dataResp) {
 						kp=dataResp;
-						console.log("kp--CallWebService--- >> ",kp);
+						console.log("kp--CallWebService--- >> ",+kp);
 					},
 					onFailure: function(error, backendresponse, response_hdrs) {
 						console.log(backendresponse);
