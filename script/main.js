@@ -6,11 +6,11 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 		
 
 		
-		var form,mainDiv,urlBASE,csrfToken,securityContext;
+		
 		var comWidget = {
 			
 			onLoad: function() { 
-
+				var form,mainDiv,urlBASE,csrfToken,securityContext;
                 console.log("Entering On Load Function--->");
 				comWidget.setBaseURL();
 				securityContext= "VPLMProjectLeader.Cross-Commodity.Requirements";
