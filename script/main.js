@@ -35,7 +35,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				var DomainOptions = ['01', '02','03','04','06'];
 				for (var i = 0; i < DomainOptions.length; i++) {
 				  var option = widget.createElement('option');
-				  option.text = options[i];
+				  option.text = DomainOptions[i];
 				  DomainDropdown.appendChild(option);
 				}
 				form.appendChild(DomainDropdown);
