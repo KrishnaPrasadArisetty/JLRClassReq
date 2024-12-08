@@ -19,10 +19,10 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				console.log("Entering On Load Function--->222222");
 				var LevelDropdown = widget.createElement('select', {'id': 'LevelDropdown', 'name': 'LevelDropdown'});
 
-				let options = ['Create New Product', 'Modify Product','Delete Product'];
-				for (var i = 0; i < options.length; i++) {
-				  var option = widget.createElement('option');
-				  option.text = options[i];
+				let leveloptions = ['Create New Product', 'Modify Product','Delete Product'];
+				for (var i = 0; i < leveloptions.length; i++) {
+				  const option = widget.createElement('option');
+				  option.text = leveloptions[i];
 				  LevelDropdown.appendChild(option);
 				}
 				form.appendChild(LevelDropdown);
@@ -54,10 +54,11 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				ActionDropdown.appendChild(emptyOption);
 
 				console.log("Entering On Load Function--->5555");
-				var ActionDropdown = ['Add New', 'Modify', 'Delete'];
-				for (var i = 0; i < ActionDropdown.length; i++) {
-				  var option = widget.createElement('option');
-				  option.text = options[i];
+				let ActionOptions = ['Add New', 'Modify', 'Delete'];
+				for (var i = 0; i < ActionOptions.length; i++) {
+				  const option = widget.createElement('option');
+				  console.log("Entering On Load Function--->5.1111--"+option);
+				  option.text = ActionOptions[i];
 				  ActionDropdown.appendChild(option);
 				}
 				console.log("Entering On Load Function--->6666");
