@@ -40,11 +40,11 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				}
 				form.appendChild(DomainDropdown);
 
-				
+				console.log("Entering On Load Function--->33333");
 				var ActionLable = document.createElement('label',{'for':'ActionDropdown'});
 				ActionLable.textContent = 'Select Action: ';
 				form.appendChild(ActionLable);
-
+				console.log("Entering On Load Function--->4444");
 				var ActionDropdown = widget.createElement('select', {'id': 'ActionDropdown', 'name': 'ActionDropdown'});
 
 				// Create empty option
@@ -53,12 +53,14 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				emptyOption.selected = true;
 				ActionDropdown.appendChild(emptyOption);
 
+				console.log("Entering On Load Function--->5555");
 				var ActionDropdown = ['Add New', 'Modify', 'Delete'];
 				for (var i = 0; i < DomainOptions.length; i++) {
 				  var option = widget.createElement('option');
 				  option.text = options[i];
 				  ActionDropdown.appendChild(option);
 				}
+				console.log("Entering On Load Function--->6666");
 				form.appendChild(ActionDropdown);
 
 
