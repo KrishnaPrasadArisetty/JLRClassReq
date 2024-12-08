@@ -5,13 +5,14 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 
 		
 
-
+		
+		var form,mainDiv,urlBASE,csrfToken,securityContext;
 		var comWidget = {
 			
 			onLoad: function() { 
 
                 console.log("Entering On Load Function--->");
-				var form,mainDiv,urlBASE,csrfToken,securityContext;
+				comWidget.setBaseURL();
 				securityContext= "VPLMProjectLeader.Cross-Commodity.Requirements";
                 mainDiv = widget.createElement('div', { 'id' : 'mainDiv' });
 				form = widget.createElement('form', { 'id' : 'myForm' });
@@ -106,14 +107,32 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				var savebutton = document.createElement('button', {'class':'dynamic-button'});
 				savebutton.style = "border-radius: 4px; padding: 5px 20px; font-size: 12px; text-align: center; margin: 10px; background-color: #368ec4; color: white; border: none; cursor: pointer";
 				savebutton.innerHTML = 'save';
+				savebutton.addEventListener('click', () => comWidget.validateCreateTask());
 				childdiv.appendChild(savebutton);
 
 				mainDiv.appendChild(childdiv);
 			},
+			validateCreateTask : function(){
+				let urlObjWAF = urlBASE;
+				urlObjWAF += "/resources/v1/modeler/tasks";
+				const data = {
+							"data": [
+									{
+										"dataelements": {
+											"title":"TEST_Create_NEWTask",
+											"state": "Assign"
+										}
+									}
+								]
+				};
+				let sResponse = comWidget.callwebService("POST",urlObjWAF,data);
+				alert("sResponse---->"+sResponse);
+			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
 				var headerWAF = {
 					SecurityContext: securityContext,
-					Accept: "application/json"
+					Accept: "application/json",
+					ENO_CSRF_TOKEN : csrfToken
 				};
 				let kp;
 				let dataResp=WAFData.authenticatedRequest(urlObjWAF, {
