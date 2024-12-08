@@ -64,9 +64,9 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 
 				// Add event listener to action type 
 				ActionDropdown.addEventListener('change', ()=> {
-					var selectedValue = LevelDropdown.value;
+					var selectedValue = ActionDropdown.value;
 					alert("selectedValue----->"+selectedValue);
-					comWidget.addActions();
+					//comWidget.addActions();
 				});
 				form.appendChild(ActionDropdown);
 
