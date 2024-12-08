@@ -3,7 +3,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 	function(DataDragAndDrop, PlatformAPI, WAFData, BaseUrl) {
 
 
-		
+		console.log("Entering On Load Function--qqqqqqqqqq->");
 
 		
 		
