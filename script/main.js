@@ -25,6 +25,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				  option.text = options[i];
 				  LevelDropdown.appendChild(option);
 				}
+				form.appendChild(LevelDropdown);
 
 				var DomainlLable = document.createElement('label',{'for':'DomainDropdown'});
 				DomainlLable.textContent = 'Select Domain: ';
