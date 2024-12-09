@@ -116,16 +116,15 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				console.log("kp--urlBASE--- >> "+urlBASE);
 				console.log("kp--urlObjWAF--- >> "+urlObjWAF);
 				console.log("kp--securityContext--- >> "+securityContext);
-				const data = {
-							"data": [
+				const data = {"data": [
 									{
 										"dataelements": {
-											"title":"TEST_Create_NEWTask",
+											"title":"TEST_Create_NEWTask_Pp",
 											"state": "Assign"
 										}
 									}
 								]
-				};
+							};
 				let sResponse = comWidget.callwebService("POST",urlObjWAF,data);
 				alert("sResponse---->"+sResponse);
 			},
@@ -140,7 +139,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				let dataResp=WAFData.authenticatedRequest(urlObjWAF, {
 					method: methodWAF,
 					headers: headerWAF,
-					data: data,
+					data: JSON.stringify(data),
 					type: "json",
 					async : false,
 					onComplete: function(dataResp) {
