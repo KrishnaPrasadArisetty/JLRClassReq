@@ -136,6 +136,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 					ENO_CSRF_TOKEN : csrfToken
 				};
 				let kp;
+				console.log("kp--headerWAF--- >> "+headerWAF);
 				let dataResp=WAFData.authenticatedRequest(urlObjWAF, {
 					method: methodWAF,
 					headers: headerWAF,
