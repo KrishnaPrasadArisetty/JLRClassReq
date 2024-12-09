@@ -130,9 +130,6 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				alert("sResponse---->"+sResponse);
 			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
-				alert("methodWAF---->"+methodWAF);
-				alert("urlObjWAF---->"+urlObjWAF);
-				alert("data---->"+data);
 				var headerWAF = {
 					SecurityContext: securityContext,
 					Accept: "application/json",
@@ -147,7 +144,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 					async : false,
 					onComplete: function(dataResp) {
 						kp=dataResp;
-						console.log("kp--CallWebService--- >> "+JSON.stringify(kp.data));
+						console.log("kp--CallWebService--- >> "+JSON.stringify(dataResp.items));
 					},
 					onFailure: function(error, backendresponse, response_hdrs) {
 						console.log(backendresponse);
@@ -156,7 +153,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 					}
 				})
 				
-				return kp;
+				return kp.status;
 			},
 			exportTable: function(filename){
 				
