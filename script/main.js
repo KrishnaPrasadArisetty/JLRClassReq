@@ -130,6 +130,9 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 				alert("sResponse---->"+sResponse);
 			},
 			callwebService: function(methodWAF,urlObjWAF,data) {
+				alert("methodWAF---->"+methodWAF);
+				alert("urlObjWAF---->"+urlObjWAF);
+				alert("data---->"+data);
 				var headerWAF = {
 					SecurityContext: securityContext,
 					Accept: "application/json",
