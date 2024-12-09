@@ -113,6 +113,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 			validateCreateTask : function(){
 				let urlObjWAF = urlBASE;
 				urlObjWAF += "/resources/v1/modeler/tasks";
+				console.log("kp--urlBASE--- >> ",+urlBASE);
 				console.log("kp--urlObjWAF--- >> ",+urlObjWAF);
 				console.log("kp--securityContext--- >> ",+securityContext);
 				const data = {
