@@ -147,7 +147,7 @@ require(["DS/DataDragAndDrop/DataDragAndDrop", "DS/PlatformAPI/PlatformAPI", "DS
 					async : false,
 					onComplete: function(dataResp) {
 						kp=dataResp;
-						console.log("kp--CallWebService--- >> ",+JSON.stringify(kp.data));
+						console.log("kp--CallWebService--- >> "+JSON.stringify(kp.data));
 					},
 					onFailure: function(error, backendresponse, response_hdrs) {
 						console.log(backendresponse);
