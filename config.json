@@ -1,0 +1,55 @@
+{
+    
+    "type" : "json",
+    "Current_env" : "N43",
+    "Prod" : {
+        "TRMpassport" : "https://iam-p4.gaydon.jlrint.com/3dpassport",
+        "TRMspace" : "https://space-p4.gaydon.jlrint.com/3dspace",
+        "username" : "karisett",
+        "password" : "Pune@0909",
+        "ltTockenPath" : "/login?action=get_auth_params",
+        "loginPath" : "/login?service=https%3A%2F%2Fspace-p4.gaydon.jlrint.com%2F3dspace%3Ftenant%3DonPromise",
+        "findObjectsPath" : "/resources/ADKWebservicesModeler/Objects",
+        "expandObjects" : "/resources/ADKWebservicesModeler/ConnetedObjects",
+        "csrfpath" : "/resources/v1/application/CSRF",
+        "CreateTaskPath" : "/resources/v1/modeler/tasks"
+    },
+
+    "N19" : {
+        "TRMpassport" : "https://sul7gblv4265.solihull.jlrint.com/3dpassport",
+        "TRMspace" : "https://sul7gblv4265.solihull.jlrint.com/3dspace",
+        "username" : "karisett",
+        "password" : "Jaguar123",
+        "ltTockenPath" : "/login?action=get_auth_params",
+        "loginPath" : "/login?service=https%3A%2F%2Fsul7gblv4265.solihull.jlrint.com%2F3dspace%3Ftenant%3DonPromise",
+        "findObjectsPath" : "/resources/ADKWebservicesModeler/Objects",
+        "expandObjects" : "/resources/ADKWebservicesModeler/ConnetedObjects",
+        "csrfpath" : "/resources/v1/application/CSRF",
+        "CreateTaskPath" : "/resources/v1/modeler/tasks"
+    },
+
+    "N43" : {
+        "TRMpassport" : "https://sul7gblv4331.solihull.jlrint.com/3dpassport",
+        "TRMspace" : "https://sul7gblv4331.solihull.jlrint.com/3dspace",
+        "username" : "karisett",
+        "password" : "Pune@0808",
+        "ltTockenPath" : "/login?action=get_auth_params",
+        "loginPath" : "/login?service=https%3A%2F%2Fsul7gblv4331.solihull.jlrint.com%2F3dspace%3Ftenant%3DonPromise",
+        "findObjectsPath" : "/resources/ADKWebservicesModeler/Objects",
+        "expandObjects" : "/resources/ADKWebservicesModeler/ConnetedObjects",
+        "csrfpath" : "/resources/v1/application/CSRF",
+        "CreateTaskPath" : "/resources/v1/modeler/tasks"
+    },
+    "N41" : {
+        "TRMpassport" : "https://sul7gblv4309.solihull.jlrint.com/3dpassport",
+        "TRMspace" : "https://sul7gblv4309.solihull.jlrint.com/3dspace",
+        "username" : "sjulaju1",
+        "password" : "Shash@238",
+        "ltTockenPath" : "/login?action=get_auth_params",
+        "loginPath" : "/login?service=https%3A%2F%2Fsul7gblv4309.solihull.jlrint.com%2F3dspace%3Ftenant%3DonPromise",
+        "findObjectsPath" : "/resources/ADKWebservicesModeler/Objects",
+        "expandObjects" : "/resources/ADKWebservicesModeler/ConnetedObjects",
+        "csrfpath" : "/resources/v1/application/CSRF",
+        "CreateTaskPath" : "/resources/v1/modeler/tasks"
+    }
+}
