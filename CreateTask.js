@@ -45,6 +45,8 @@ async function getReadyFetchInstance() {
           agent,
       };
 
+
+    
       let response1 = await fetchCookie(env.TRMpassport+env.loginPath, requestOptions1)
       let body1 = await response1.text();
 
